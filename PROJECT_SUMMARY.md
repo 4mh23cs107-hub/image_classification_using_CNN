@@ -226,7 +226,7 @@ optimizer = optim.RMSprop(model.parameters(), lr=0.001)
 
 | Issue | Solution |
 |-------|----------|
-| `ModuleNotFoundError: torch` | `pip install torch torchvision` |
+| `ModuleNotFoundError: torch` | `pip install --upgrade pip && pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu` |
 | Low accuracy (< 50%) | Increase `NUM_EPOCHS`, decrease `LEARNING_RATE` |
 | CUDA out of memory | Reduce `BATCH_SIZE` to 16 |
 | Training very slow | Ensure GPU is detected, increase `BATCH_SIZE` |

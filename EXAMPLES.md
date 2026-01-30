@@ -258,8 +258,8 @@ print(f"CUDA device: {torch.cuda.get_device_name(0) if torch.cuda.is_available()
 # "Using device: cuda" = GPU is being used ✓
 # "Using device: cpu" = Only CPU is being used (slow)
 
-# If on Windows and CUDA not detected, install PyTorch-CUDA:
-# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# If on Windows and CUDA not detected, upgrade pip and install PyTorch-CUDA:
+# pip install --upgrade pip && pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 # ============================================================================
 # EXAMPLE 10: SAVE AND LOAD MODELS

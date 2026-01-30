@@ -235,9 +235,9 @@ After training:
 
 ### Issue: "ModuleNotFoundError: No module named 'torch'"
 
-**Solution**: Install PyTorch
+**Solution**: Upgrade pip and install PyTorch (pinned)
 ```bash
-pip install torch torchvision
+pip install --upgrade pip && pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
 ```
 
 ### Issue: Accuracy stuck below 50%

@@ -37,10 +37,11 @@ Open PowerShell in this folder and paste:
 
 # Reinstall PyTorch (CPU version for Windows)
 pip uninstall torch torchvision -y
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+pip install --upgrade pip
+pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
 
-# Install other packages
-pip install matplotlib numpy
+# Install other packages from requirements
+pip install -r requirements.txt
 ```
 
 ### Step 4: Train Your Model
@@ -170,8 +171,7 @@ Just complete these 3 simple steps:
 After that, run:
 ```powershell
 .\env\Scripts\Activate.ps1
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install matplotlib numpy
+pip install --upgrade pip && pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
 python train.py
 ```
 

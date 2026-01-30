@@ -33,7 +33,8 @@ call env\Scripts\activate.bat
 
 REM Install requirements
 echo [4/4] Installing Python packages...
-pip install torch torchvision matplotlib numpy --index-url https://download.pytorch.org/whl/cpu
+echo Upgrading pip and installing pinned PyTorch wheels (this may take a few minutes)...
+pip install --upgrade pip && pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
 
 echo.
 echo ============================================================================

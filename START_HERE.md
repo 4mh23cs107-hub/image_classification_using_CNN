@@ -21,8 +21,9 @@ Open PowerShell in this folder and paste this:
 ```powershell
 .\env\Scripts\Activate.ps1
 pip uninstall torch torchvision -y
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install matplotlib numpy
+pip install --upgrade pip
+pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements.txt
 ```
 
 ---

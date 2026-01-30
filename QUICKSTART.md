@@ -12,9 +12,9 @@ Open your terminal/command prompt and run:
 
     pip install -r requirements.txt
 
-Or if that doesn't work, install PyTorch separately:
+Or if that doesn't work, upgrade pip and install PyTorch (pinned):
 
-    pip install torch torchvision
+    pip install --upgrade pip && pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
     
 Verify installation:
 
@@ -173,7 +173,7 @@ Try these modifications:
 # ============================================================================
 """
 Problem: ImportError: No module named 'torch'
-Solution: pip install torch torchvision
+Solution: pip install --upgrade pip && pip install -r requirements.txt
 
 Problem: CUDA out of memory
 Solution: Reduce BATCH_SIZE from 32 to 16

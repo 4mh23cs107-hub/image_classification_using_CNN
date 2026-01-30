@@ -27,11 +27,14 @@ Open PowerShell in this folder and run:
 # Remove old PyTorch installation
 pip uninstall torch torchvision -y
 
-# Install CPU-only PyTorch (Windows compatible)
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# Upgrade pip (helps find compatible wheels)
+pip install --upgrade pip
 
-# Install other dependencies
-pip install matplotlib numpy
+# Install CPU-only PyTorch (Windows compatible, pinned to tested versions)
+pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu
+
+# Install other dependencies from requirements
+pip install -r requirements.txt
 ```
 
 ### Step 3: Verify Installation
@@ -63,7 +66,7 @@ Try this:
 1. Delete the `.venv` folder completely
 2. Create a new virtual environment: `python -m venv env`
 3. Activate it: `.\env\Scripts\Activate.ps1`
-4. Install PyTorch: `pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu`
+4. Upgrade pip and install PyTorch (pinned): `pip install --upgrade pip && pip install torch==2.10.0 torchvision==0.25.0 --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt`
 
 ### Having trouble with PowerShell activation?
 
@@ -88,7 +91,7 @@ conda install pytorch torchvision pytorch-cuda=12.4 -c pytorch -c nvidia
 |------|---------|
 | Activate environment (PowerShell) | `.\env\Scripts\Activate.ps1` |
 | Activate environment (CMD) | `env\Scripts\activate.bat` |
-| Install packages | `pip install -r requirements.txt` |
+| Install packages | `pip install --upgrade pip && pip install -r requirements.txt` |
 | Train model | `python train.py` |
 | Check PyTorch | `python -c "import torch; print(torch.__version__)"` |
 

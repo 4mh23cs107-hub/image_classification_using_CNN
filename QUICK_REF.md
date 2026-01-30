@@ -83,7 +83,7 @@ visualize_predictions(model, 'image.jpg', device=device)
 
 | Problem | Fix |
 |---------|-----|
-| `No module named torch` | `pip install torch torchvision` |
+| `No module named torch` | `pip install --upgrade pip && pip install -r requirements.txt` |
 | Accuracy too low | Increase `NUM_EPOCHS` to 20 |
 | Out of memory | Reduce `BATCH_SIZE` to 16 |
 | Training slow | Check if GPU is being used |
